@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  validates :name, presence: true
+  validates :email, format: { with: /\A[a-zA-Z0-9]*+\@spartaglobal.com\z/,
+    message: "%{value} is not a valid email" }
 end
